@@ -32,7 +32,7 @@ class EmployeeResults extends Component {
       <div>
         <Table
         employees={this.state.employees}
-        testProp="Test prop value." />
+        />
       </div>
     );
   }

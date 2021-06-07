@@ -4,6 +4,25 @@ import * as moment from 'moment';
 
 function Table(props) {
 
+    const { employees } = props;
+    let sortedEmployees = [...employees];
+
+    // This sorting function works by comparing the last names to each other
+    // Two last names are passed in as arguments and compared against each other
+    // -1 = the first last name (a) should come before the second (b)
+    // 1 = the second last name (b) should come before the first (a)
+    // 0 = the last names are identical
+
+    sortedEmployees.sort((a, b) => {
+        if (a.name.last < b.name.last) {
+            return -1;
+        } else if (a.name.last > b.name.last) {
+            return 1;
+        } else {
+            return 0;
+        }
+    })
+
     return (
 
         <Container>
@@ -21,7 +40,7 @@ function Table(props) {
                         </tr>
                     </thead>
                     <tbody>
-                        {props.employees.map((employee) => {
+                        {sortedEmployees.map((employee) => {
 
                             // For each of the 100 items in the array (employee data), this is the
                             // information that is pulled from the response and displayed in the table
