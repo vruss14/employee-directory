@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Employee Directory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A CMS solution that allows users to view a list of pseudo-employees, search by name, and sort by last name.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This website utilizes React to dynamically display pseudo-employee data. Users can view 100 "employees" from the Random User API, which can then be searched and sorted. As users input a query into the search bar at the top of the page, the pseudo-employee list changes to display only the pseudo-employees who match the search criteria. Deleting all text in the search bar results in the original list being displayed. By clicking the "Name" button in the table header, users can sort pseudo-employees by last name (A–Z and Z–A, with A–Z as the default).
 
-### `npm start`
+This website was very challenging for me to create, and I learned a lot in the process. One of the most difficult parts was understanding how to ensure everything was connected (i.e. all components received all necessary props to function correctly). React certainly has a bit of a learning curve, but I was eventually able to better understand how each file of JavaScript code relates to the others.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I used a lot of array methods in this website, including .map(), .filter(), and even .flat(). I had never heard of using .flat() before, but through my research I realized that it was an excellent solution in making sure that there are no nested arrays (and thus, inaccessible properties) when displaying the list of pseudo-employees.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+An additional challenge for me was debugging errors in which the code failed to compile on my local computer. I tend to use console.log within JavaScript files to get a better idea of why unexpected behavior is happening, but if nothing compiled, I didn't have that ability. It was a great challenge in thinking logically and using my JavaScript knowledge base.
 
-### `npm test`
+A few ideas for future development include:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Adding additional sorting functionality
+- Adding additional search functionality
+- Adding more CSS/custom styling to the page
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- HTML5
+- CSS3
+- JavaScript
+- React JS and JSX
+- Moment.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Table of Contents
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [License](#License)
+- [Contributing](#Contributing)
+- [Tests](#Tests)
+- [Questions](#Questions)
+            
+## Installation
 
-### `npm run eject`
+The application can be viewed live on GitHub Pages here: https://vruss14.github.io/employee-directory/
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Alternatively, the application can be cloned and run locally at port 3000. Navigate to the correct directory and run ```npm start``` in the command line to do so.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A view of the home page:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![homepage](assets/employee-directory-homepage.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+A view of the website's functionality:
 
-## Learn More
+![websitegif](assets/employee-directory-gif.gif)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This application is only intended to view, sort, and filter a list of pseudo-employees.
 
-### Code Splitting
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project has not yet been licensed, and thus, standard copyright laws apply.
+            
+## Contributing
 
-### Analyzing the Bundle Size
+Valerie Russell is the sole contributor to this project. 
+            
+## Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+There are currently no tests written for this project.
+            
+## Questions
 
-### Making a Progressive Web App
+If you have any questions about this application my GitHub username is vruss14 and you can view my GitHub profile at https://github.com/vruss14.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you have additional questions, feel free to reach out to me at vruss14@gmail.com.
