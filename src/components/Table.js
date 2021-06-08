@@ -4,8 +4,19 @@ import * as moment from 'moment';
 
 function Table(props) {
 
-    const { employees } = props;
-    let sortedEmployees = [...employees];
+    const { employees, matchSearch } = props;
+
+    // Sorted employees = an array of all employees that match the search (if specified)
+    // The array is flattened, meaning that the sub-array that was nested is
+    // flattened back into the parent array
+    let sortedEmployees = [...matchSearch].flat();
+
+    // If the search box is blank (if a user deleted a previous search)
+    // this will revert the employees listed back to the original list pulled from the API
+
+    if(props.value === "") {
+        sortedEmployees = [...employees];
+    }
 
     // This sorting function works by comparing the last names to each other
     // Two last names are passed in as arguments and compared against each other
