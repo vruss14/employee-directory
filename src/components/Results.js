@@ -7,7 +7,8 @@ class EmployeeResults extends Component {
   state = {
     employees: [],
     search: "",
-    matchSearch: []
+    matchSearch: [],
+    direction: "Ascending"
   };
 
   componentDidMount() {
@@ -61,10 +62,15 @@ class EmployeeResults extends Component {
               }
 
           })
-
       }
+  }
 
-
+  reverseOrder = event => {
+      if(this.state.direction === "Ascending") {
+        this.setState({ direction: "Descending" })
+      } else if(this.state.direction === "Descending") {
+        this.setState({ direction: "Ascending" })
+      }
   }
 
   render() {
@@ -79,6 +85,8 @@ class EmployeeResults extends Component {
         employees={this.state.employees}
         matchSearch={this.state.matchSearch}
         value={this.state.search}
+        direction={this.state.direction}
+        reverseOrder={this.reverseOrder}
         />
       </div>
     );

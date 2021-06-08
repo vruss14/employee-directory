@@ -24,15 +24,28 @@ function Table(props) {
     // 1 = the second last name (b) should come before the first (a)
     // 0 = the last names are identical
 
-    sortedEmployees.sort((a, b) => {
-        if (a.name.last < b.name.last) {
-            return -1;
-        } else if (a.name.last > b.name.last) {
-            return 1;
-        } else {
-            return 0;
-        }
-    })
+    // Switch from A-Z and Z-A
+    if (props.direction === "Ascending") {
+        sortedEmployees.sort((a, b) => {
+            if (a.name.last < b.name.last) {
+                return -1;
+            } else if (a.name.last > b.name.last) {
+                return 1;
+            } else {
+                return 0;
+            }
+        })
+    } else if (props.direction === "Descending") {
+        sortedEmployees.sort((a, b) => {
+            if (a.name.last > b.name.last) {
+                return -1;
+            } else if (a.name.last < b.name.last) {
+                return 1;
+            } else {
+                return 0;
+            }
+        })
+    }
 
     return (
 
@@ -43,7 +56,7 @@ function Table(props) {
                     <thead className="thead-dark">
                         <tr>
                             <th scope="col">Image</th>
-                            <th scope="col">Name</th>
+                            <th scope="col"><button className="btn btn-primary" onClick={props.reverseOrder}>Name</button></th>
                             <th scope="col">Location</th>
                             <th scope="col">Phone</th>
                             <th scope="col">Email</th>
